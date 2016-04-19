@@ -9,6 +9,8 @@ gem 'mysql2', '~> 0.3.18'
 
 gem 'date_validator'
 
+gem 'bindata'
+
 gem 'rspec-rails', '~> 3.0'
 gem 'shoulda-matchers', '~> 3.1'
 gem "factory_girl_rails"
