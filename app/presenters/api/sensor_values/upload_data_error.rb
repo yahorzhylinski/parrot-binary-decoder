@@ -1,7 +1,7 @@
-class Api::SensorValues::IndexErrors < ::Api::ResourcePresenter
+class Api::SensorValues::UploadDataError < ::Api::ResourcePresenter
 
   def initialize(error)
-    super(error)
+    super([error])
   end
 
 end
