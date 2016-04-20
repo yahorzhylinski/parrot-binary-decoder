@@ -20,7 +20,7 @@ class SensorValue < ActiveRecord::Base
   SOIL_MOISTURE_SHOULD_PRESENCE = true
   SOIL_MOISTURE_SHOULD_BE_ONLY_INTEGER = true
 
-  DUPLICATE_ERROR_TO_LOG = "Trying to insert duplicate for %s"
+  DUPLICATE_ERROR_TO_LOG = "Trying to insert a duplicate for %s"
 
   # => 
   # => VALIDATIONS
