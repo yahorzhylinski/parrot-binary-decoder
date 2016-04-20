@@ -11,10 +11,7 @@ class Api::SensorValuesController < ::Api::ApplicationController
       return error_response Api::SensorValues::UploadDataError.new(e.message).as_json, :bad_request
     end
 
-    @data.parsed_data.each do | sensor_value |
-      s = SensorValue.new(sensor_value)
-      s.save
-    end
+    @data.parsed_data(SensorValue)
 
     success_response
   end
