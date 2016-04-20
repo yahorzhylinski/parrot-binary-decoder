@@ -15,7 +15,7 @@ class BufferParser::Parser
     return @result_array if @result_array.length > 0
 
     if !@class_parser
-      raise Errors::ClassParserInvalidError.new
+      raise ::BufferParser::Errors::ClassParserInvalidError.new
     end
 
     if !@base64data
