@@ -11,15 +11,17 @@ class BufferParser::Models::UploadSensorsModel < ::BinData::Record
     uint16be :soil_moisture
   end
 
-  def parsed_data
-    records.map do | record |
-      {
+  def parsed_data(class_name)
+    records.each do | record |
+      params = {
         sensor_id: record.sensor_id,
         capture_time: record.capture_time ? Time.at(record.capture_time) : nil,
         air_temperature: record.air_temperature,
         light: record.light,
         soil_moisture: record.soil_moisture
       }
+
+      class_name.new(params).save
     end
   end
 
