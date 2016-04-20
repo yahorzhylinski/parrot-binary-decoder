@@ -42,5 +42,15 @@ RSpec.describe BufferParser::Parser, type: :model do
     parser = BufferParser::Parser.new buffer, BufferParser::Models::UploadSensorsModel
     result = parser.get_data
     expect(result.nb_entres).to eq(7781)
+    expect(result.records.length).to eq(7781)
   end
+
+  it 'should parse example' do 
+    buffer = "AAALVwKQHwAlrL8BdgMGVwKMmwAloxgBeAMHVwKJFwAldmMBeQMHVwKFkwAlZI0BcAMIVwKCDwAl\nQCoBcAMIVwJ+iwAlP6sBfAMIVwJ7BwAlLyMBegMIVwJ3gwAlMXQBeAMIVwJz/wAlH4QBdgMHVwJw\newAlHqcBeAMFVwJs9wAlIj8BfAMF\n"
+    parser = BufferParser::Parser.new buffer, BufferParser::Models::UploadSensorsModel
+    result = parser.get_data
+    expect(result.nb_entres).to eq(11)
+    expect(result.records.length).to eq(11)
+  end
+
 end
