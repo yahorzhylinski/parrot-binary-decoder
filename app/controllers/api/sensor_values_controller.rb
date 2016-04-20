@@ -17,7 +17,7 @@ class Api::SensorValuesController < ::Api::ApplicationController
   end
 
   def index
-
+    
     params = Api::SensorValues::SensorValuesIndexViewModel.new index_search_params
     if !params.valid?
       return error_response Api::SensorValues::IndexErrors.new(params.errors.full_messages).as_json, 
