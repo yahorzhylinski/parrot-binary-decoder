@@ -13,16 +13,14 @@ RSpec.describe Api::SensorValues::SensorValuesIndexViewModel, type: :model do
 
   it 'should validate start_time' do
     sensor_value = FactoryGirl.build :api_sensor_values_index_view_model
-    sensor_value.start_time = 123
-    sensor_value.valid?
+    sensor_value.start_time = "qew"
     expect(sensor_value.valid?).to be_falsey
     expect(sensor_value.errors[:start_time].size).to eq(1)
   end
 
   it 'should validate end_time' do
     sensor_value = FactoryGirl.build :api_sensor_values_index_view_model
-    sensor_value.end_time = 123
-    sensor_value.valid?
+    sensor_value.end_time = "qee"
     expect(sensor_value.valid?).to be_falsey
     expect(sensor_value.errors[:end_time].size).to eq(1)
   end
