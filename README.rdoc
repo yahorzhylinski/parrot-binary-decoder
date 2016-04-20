@@ -35,25 +35,13 @@ If it has not saved it the db already has such record i log this message to log 
 
 Trying to insert a duplicate for #<SensorValue id: nil, sensor_id: 22226, capture_time: "1989-02-27 08:00:37", air_temperature: 65535, light: 378, soil_moisture: 681, created_at: nil, updated_at: nil>
 
-
-==== HOW TO RUN
-all you need to clone the project and copy database and secrets ymls.
-run the project
-
-```
-rails s
-```
-
-run tests
-
-```
-rspec
-```
-
 ==== TIME LOG
 
-| ACTIVITIES        | TIME, h           |
-| ----------------- |:-----------------:|
-| col 3 is      | right-aligned |
-| col 2 is      | centered      |
-| zebra stripes | are neat      |    $1 |
+* looking how to parse the data 40m
+* write code & tests 6h 30m
+* write the report 30m
+* total time 7h 40m
+
+==== SCREENSHOTS 
+
+!(https://raw.githubusercontent.com/yahorzhylinski/parrot-binary-decoder/master/screenshots/error_index.png)
