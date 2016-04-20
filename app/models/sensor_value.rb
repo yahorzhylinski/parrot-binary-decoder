@@ -20,6 +20,8 @@ class SensorValue < ActiveRecord::Base
   SOIL_MOISTURE_SHOULD_PRESENCE = true
   SOIL_MOISTURE_SHOULD_BE_ONLY_INTEGER = true
 
+  DUPLICATE_ERROR_TO_LOG = "Trying to insert duplicate for %s"
+
   # => 
   # => VALIDATIONS
   # => 
@@ -51,5 +53,14 @@ class SensorValue < ActiveRecord::Base
   # => it should presence, be only integer
   validates :soil_moisture, presence: SOIL_MOISTURE_SHOULD_PRESENCE
   validates_numericality_of :soil_moisture, only_integer: SOIL_MOISTURE_SHOULD_BE_ONLY_INTEGER
+
+  after_validation :do_something_if_validation_fails, unless: lambda { errors.empty? }
+
+  protected
+  def do_something_if_validation_fails
+    if SensorValue.where(sensor_id: sensor_id, capture_time: capture_time).count > 0
+      logger.info DUPLICATE_ERROR_TO_LOG % [self.inspect]
+    end
+  end
 
 end
