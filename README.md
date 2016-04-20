@@ -44,4 +44,4 @@ Trying to insert a duplicate for #<SensorValue id: nil, sensor_id: 22226, captur
 
 ==== SCREENSHOTS 
 
-!(https://raw.githubusercontent.com/yahorzhylinski/parrot-binary-decoder/master/screenshots/error_index.png)
+[!(https://github.com/yahorzhylinski/parrot-binary-decoder/blob/master/screenshots/error_index.png)]
