@@ -1,5 +1,5 @@
 development:
-  adapter: sqlite
+  adapter: sqlite3
   encoding: utf8
   database: app_db.sqlite3
 

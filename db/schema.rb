@@ -14,15 +14,15 @@
 ActiveRecord::Schema.define(version: 20160418212305) do
 
   create_table "sensor_values", force: :cascade do |t|
-    t.integer  "sensor_id",       limit: 4
+    t.integer  "sensor_id"
     t.datetime "capture_time"
-    t.integer  "air_temperature", limit: 4
-    t.integer  "light",           limit: 4
-    t.integer  "soil_moisture",   limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer  "air_temperature"
+    t.integer  "light"
+    t.integer  "soil_moisture"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  add_index "sensor_values", ["sensor_id", "capture_time"], name: "index_sensor_values_on_sensor_id_and_capture_time", unique: true, using: :btree
+  add_index "sensor_values", ["sensor_id", "capture_time"], name: "index_sensor_values_on_sensor_id_and_capture_time", unique: true
 
 end
