@@ -5,7 +5,8 @@ gem 'rails', '4.2.4'
 
 gem 'rails-api'
 
-gem 'mysql2', '~> 0.3.18'
+gem 'sqlite3'
+#gem 'mysql2', '~> 0.3.18'
 
 gem 'date_validator'
 

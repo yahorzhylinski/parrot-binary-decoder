@@ -1,0 +1,11 @@
+development:
+  adapter: sqlite
+  encoding: utf8
+  database: app_db.sqlite3
+
+#test:
+#  adapter: mysql2
+#  encoding: utf8
+#  database: parrot_db
+#  username: root
+#  password: juM55cvx
